@@ -2,16 +2,108 @@
 <html>
 <head>
     <title>Upload Data</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #e3f2fd, #fce4ec);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h2 {
+            color: #1565c0;
+            font-size: 28px;
+            margin-bottom: 30px;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        form {
+            background-color: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 1.3s ease-in-out;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        input[type="file"],
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #42a5f5;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1e88e5;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .examples {
+            text-align: left;
+            font-size: 14px;
+            color: #444;
+            margin-top: 10px;
+            background: #f1f8e9;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #dce775;
+        }
+
+        .examples strong {
+            color: #2e7d32;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
-    <h2>Upload CSV/Excel File for Training</h2>
-    <form method="POST" enctype="multipart/form-data">
-        <input type="file" name="file" required><br><br>
 
-        <label>Enter Instance to Classify (comma-separated):</label><br>
-        <input type="text" name="instance" placeholder="e.g., 2,3,4" required><br><br>
+    <h2>Upload CSV or Excel File</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".csv, .xls, .xlsx" required><br>
+
+        <label>Enter Instance to Classify:</label><br>
+        <input type="text" name="instance" placeholder="e.g., 2,3,4" required><br>
+
+        <div class="examples">
+            <strong>Example Instances:</strong><br>
+            Weather, Temp -> <code>Sunny,Hot</code><br>
+            Activity, Time -> <code>Play,Evening</code><br>
+            Age, Marks -> <code>Teen,70</code>
+        </div><br>
 
         <button type="submit">Classify</button>
     </form>
+
 </body>
 </html>
