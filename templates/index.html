@@ -1,12 +1,98 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>Naive Bayes Classifier</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #f0f4c3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      justify-content: center;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #00796b;
+      animation: popIn 1s ease-out;
+    }
+
+    .options {
+      margin-top: 30px;
+    }
+
+    a {
+      text-decoration: none;
+      background-color: #00796b;
+      color: white;
+      padding: 12px 25px;
+      margin: 10px;
+      border-radius: 30px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      font-size: 1.1rem;
+      display: inline-block;
+    }
+
+    a:hover {
+      background-color: #004d40;
+      transform: scale(1.05);
+    }
+
+    .icon {
+      margin-right: 8px;
+    }
+
+    @keyframes popIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .bayes-animation {
+      margin-top: 40px;
+      width: 250px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
-  <h1>Naive Bayes Classifier</h1>
-  <a href="/upload">Upload File</a> | 
-  <a href="/manual">Create Table Manually</a>
+
+  <h1><i class="fas fa-project-diagram icon"></i>Naive Bayes Classifier</h1>
+  
+  <div class="options">
+    <a href="/upload"><i class="fas fa-file-upload icon"></i>Upload Dataset</a>
+    <a href="/manual"><i class="fas fa-keyboard icon"></i>Enter Data Manually</a>
+  </div>
+  <footer>
+    <p>Naive Bayes predicts probabilities based on features – Fast, Simple & Powerful 🧠</p>
+  </footer>
+
 </body>
 </html>
