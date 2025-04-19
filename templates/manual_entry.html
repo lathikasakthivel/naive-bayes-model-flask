@@ -1,7 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Manual Entry</title>
+    <title>Manual Entry - Naive Bayes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9fbe7;
+            padding: 30px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #33691e;
+        }
+
+        form {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        textarea, input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 14px;
+            border: 1px solid #cfd8dc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #689f38;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #558b2f;
+        }
+
+        .examples {
+            text-align: left;
+            max-width: 550px;
+            margin: 0 auto 20px;
+            background: #f1f8e9;
+            border: 1px dashed #aed581;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .examples h4 {
+            margin: 0 0 10px 0;
+            color: #33691e;
+        }
+
+        .example-block {
+            background-color: #ffffff;
+            padding: 8px 12px;
+            margin: 6px 0;
+            border-left: 4px solid #c5e1a5;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+    </style>
 </head>
 <body>
     <h2>Enter Training Data (Comma Separated)</h2>
@@ -13,5 +83,26 @@
 
         <button type="submit">Classify</button>
     </form>
+    <div class="examples">
+        <h4>Sample Examples:</h4>
+        <div class="example-block">
+feature1,feature2,label<br>
+sunny,hot,no<br>
+sunny,cool,yes<br>
+rainy,cool,yes
+        </div>
+        <div class="example-block">
+color,shape,label<br>
+red,round,apple<br>
+yellow,long,banana<br>
+green,round,apple
+        </div>
+        <div class="example-block">
+weather,temperature,play<br>
+sunny,hot,no<br>
+overcast,mild,yes<br>
+rainy,cool,yes
+        </div>
+    </div>
 </body>
 </html>
