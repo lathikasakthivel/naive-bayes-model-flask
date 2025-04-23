@@ -35,8 +35,7 @@ def upload_file():
 
                 model = train_model(df)
 
-                test_data = np.array([list(map(float, instance_data.strip().split(',')))])
-
+                test_data = [instance_data.strip().split(',')]
                 prediction = classify_instance(model, test_data)
 
                 return render_template('result.html', prediction=prediction)
@@ -57,8 +56,10 @@ def manual_entry():
 
             model = train_model(df)
 
-            test_data = np.array([list(map(float, instance_data.strip().split(',')))])
+            # Process instance input (DON'T convert to float — just split)
+            test_data = [instance_data.strip().split(',')]
             prediction = classify_instance(model, test_data)
+
 
             return render_template('result.html', prediction=prediction)
         except Exception as e:
